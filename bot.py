@@ -377,6 +377,8 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
         if summary.strip() == "SKIP_DAILY_DIGEST":
             return
 
+        summary += "\n\n#gholam"
+
         # Telegram messages are limited to 4096 chars. Leave room for formatting.
         for chunk_start in range(0, len(summary), 3900):
             chunk = summary[chunk_start : chunk_start + 3900]
